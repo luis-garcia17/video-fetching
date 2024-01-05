@@ -1,25 +1,34 @@
-### Video Page App
+# Video Page App
+
 This is a web app that displays a page with videos fetched from an API.
 
-# Features
-Displays a grid of video titles, thumbnails, and details
-Fetches video data from API endpoint created on local environment
-Pagination to load more videos
-Responsive design for mobile and tablet
-Loading and error handling
+## Features
 
-# API
-GET /api/videos fetches data from an internal API created to bypass CORS restrictions. It returns a JSON array of video objects
+- Displays a grid of video titles, thumbnails and details.
 
+- Fetches video data from API endpoint provided by Algotive.
 
-# Built With
-Next.js - React Framework
-Tailwind CSS - Styling
+- Pagination to load more videos (future feature).
+
+- Responsive design for mobile and tablet.
+
+- Loading and error handling.
+
+## API
+
+`bash GET /api/videos`
+
+Fetches data from an internal API created to bypass CORS restrictions. It returns a JSON array of video objects.
+
+## Built With
+
+- Next.js
+- React Framework
+- Tailwind CSS
 
 ## Next.js Documentation
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 
 Run the development server:
 
