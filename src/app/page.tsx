@@ -15,7 +15,6 @@ export default function Home() {
     updated_at: string;
   }
 
-
   const [videos, setVideos] = useState<Video[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -38,12 +37,14 @@ export default function Home() {
         setVideos(data.results);
         setLoading(false);
       } catch (error) {
+
         let message;
         if (error instanceof Error) message = error.message;
         else message = String(error);
 
         setError(message);
         setLoading(false);
+
       }
     })();
   }, []);
@@ -62,6 +63,7 @@ export default function Home() {
         <FaVideo className="ml-5 text-3xl" />
         <h1 className="ml-3 text-left text-lg"> MyTube </h1>
       </header>
+
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
@@ -92,6 +94,7 @@ export default function Home() {
                 allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture"
                 allowFullScreen
               ></iframe>
+
               <div className="flex flex-col justify-center md:items-center md:w-full lg:items-start gap-y-2">
                 <div className="flex justify-left items-center gap-x-2 ml-2 mt-2">
                   <FaClapperboard className="text-2xl" />
@@ -99,6 +102,7 @@ export default function Home() {
                 </div>
                 <p className="text-sm ml-2 mb-2">{video.author}</p>
               </div>
+
             </li>
           ))}
         </ul>
