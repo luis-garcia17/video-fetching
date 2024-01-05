@@ -60,7 +60,7 @@ export default function Home() {
           text-white"
       >
         <FaVideo className="ml-5 text-3xl" />
-        <h1 className="ml-3 text-left text-lg">MyTube</h1>
+        <h1 className="ml-3 text-left text-lg"> MyTube </h1>
       </header>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
