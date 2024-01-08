@@ -1,7 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaVideo, FaClapperboard } from "react-icons/fa6";
+import { FaVideo } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
+import YoutubeVideo from "@/components/YoutubeVideo";
 
 export default function Home() {
   interface Video {
@@ -67,46 +68,11 @@ export default function Home() {
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
-      {videos.length > 0 && (
-        <ul className="lg:flex lg:flex-wrap lg:justify-around lg:gap-x-4">
-          {videos.map(video => (
-            <li
-              key={video.id}
-              className="
-                w-4/5 
-                md:w-3/4
-                lg:w-1/6
-                mx-auto 
-                my-6 
-                rounded-md 
-                shadow-md 
-                overflow-hidden 
-                flex 
-                flex-col 
-                md:flex-row
-                lg:flex-col
-                text-gray-600
-              "
-            >
-              <iframe
-                title={video.title}
-                src={video.url}
-                allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture"
-                allowFullScreen
-              ></iframe>
-
-              <div className="flex flex-col justify-center md:items-center md:w-full lg:items-start gap-y-2">
-                <div className="flex justify-left items-center gap-x-2 ml-2 mt-2">
-                  <FaClapperboard className="text-2xl" />
-                  <strong>{video.title}</strong>
-                </div>
-                <p className="text-sm ml-2 mb-2">{video.author}</p>
-              </div>
-
-            </li>
-          ))}
-        </ul>
-      )}
+      {videos.length > 0 && <ul>
+        {videos.map((video) => (
+          <YoutubeVideo video={video} key={video.id} />
+        ))}
+      </ul>}
     </main>
   );
 }
