@@ -68,7 +68,7 @@ export default function Home() {
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
-      {videos.length > 0 && <ul>
+      {videos.length > 0 && <ul className="lg:flex lg:flex-row lg:flex-wrap">
         {videos.map((video) => (
           <YoutubeVideo video={video} key={video.id} />
         ))}

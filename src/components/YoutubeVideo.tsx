@@ -13,7 +13,6 @@ interface YoutubeVideo {
 
 const YoutubeVideo = ({ video }: { video: YoutubeVideo }): JSX.Element => {
   return (
-    <article>
         <li
           className="
             w-4/5 
@@ -46,7 +45,6 @@ const YoutubeVideo = ({ video }: { video: YoutubeVideo }): JSX.Element => {
             <p className="text-sm ml-2 mb-2">{video.author}</p>
           </div>
         </li>
-    </article>
   );
 };
 
