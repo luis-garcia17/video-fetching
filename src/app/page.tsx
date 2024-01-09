@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
-import { FaVideo } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
 import YoutubeVideo from "@/components/YoutubeVideo";
+import Header from "@/components/Header";
+import Pagination from "@/components/Pagination";
 
 export default function Home() {
   interface Video {
@@ -52,19 +53,7 @@ export default function Home() {
 
   return (
     <main className="bg-stone-50">
-      <header 
-        className="
-          h-12 
-          bg-red-600 
-          flex 
-          justify-left 
-          items-center 
-          text-white"
-      >
-        <FaVideo className="ml-5 text-3xl" />
-        <h1 className="ml-3 text-left text-lg"> MyTube </h1>
-      </header>
-
+      <Header />
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
 
@@ -73,6 +62,7 @@ export default function Home() {
           <YoutubeVideo video={video} key={video.id} />
         ))}
       </ul>}
+      {/* <Pagination /> */}
     </main>
   );
 }
